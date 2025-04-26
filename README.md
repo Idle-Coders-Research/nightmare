@@ -1,8 +1,9 @@
-
 # 🕶️ NIGHTMARE 
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
+
 ![Platform](https://img.shields.io/badge/platform-Linux-lightgrey.svg)
 
 **Nightmare** is a stealth-focused command-line tool for privacy-conscious users, hackers, and cyber wanderers. Spoof your identity, vanish from the grid, lock down your network — and just maybe...
@@ -30,7 +31,7 @@
   - Restore IPv6, disable firewall & Anonsurf
   - Reset to normal state
 
-- 🧪 **Nightmare CLI**
+- 📋️ **Nightmare CLI**
   - `nightmare start` – Enter ghost mode
   - `nightmare status` – Check your current stealth state
   - `nightmare stop` – Return to human mode
@@ -41,7 +42,7 @@
 ## 📦 Installation
 
 ### 💻 From `.deb` package:
-####Download the latest `.deb` file from the [releases](https://github.com/YOUR_USERNAME/nightmare/releases) page and run:
+#### Download the latest `.deb` file from the [releases](https://github.com/YOUR_USERNAME/nightmare/releases) page and run:
 
 ```bash
 sudo dpkg -i nightmare_1.0.deb
