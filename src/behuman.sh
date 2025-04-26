@@ -3,17 +3,26 @@
 
 echo "[*] Reverting to human mode..."
 
-# Detect active WiFi interface
-iface=$(nmcli device status | awk '$2 == "wifi" && $3 == "connected" && $1 !~ /^p2p-dev-/ { print $1 }')
-echo "[~] finding interface: $iface"
+# Step 1: Detect currently active WiFi interface
+detected_iface=$(nmcli device status | awk '$2 == "wifi" && $3 == "connected" && $1 !~ /^p2p-dev-/ { print $1 }')
+
+# Step 2: Use detected interface to find default connection
+detected_conn=$(nmcli -t -f NAME,DEVICE connection show --active | grep "$detected_iface" | cut -d: -f1)
+
+# Step 3: Prompt user for connection name (optional override)
+read -p "[?] Enter connection name [default: $detected_conn] press ENTER for deffault : " conn_name
+conn_name="${conn_name:-$detected_conn}"
+
+# Step 4: Redetect iface based on final connection name
+iface=$(nmcli -t -f DEVICE,TYPE,STATE,CONNECTION device | awk -F: -v name="$conn_name" '$4 == name { print $1 }')
+
+# Step 5: Validate interface found
 if [[ -z "$iface" ]]; then
-  echo "[ERROR] No active WiFi interface found. Exiting."
+  echo "[✗] Error: Could not find interface for connection '$conn_name'"
   exit 1
 fi
 
-# Detect connection name
-conn_name=$(nmcli -t -f NAME,DEVICE connection show --active | grep "$iface" | cut -d: -f1)
-
+# Show final results
 echo "[+] Detected Interface: $iface"
 echo "[+] Detected Connection: $conn_name"
 

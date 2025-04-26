@@ -2,7 +2,7 @@
 # nightmare - Command line wrapper for begghost, isghost, and behuman
 
 # Configurable script directory
-SCRIPT_DIR="$HOME/Ghost-Kit"
+SCRIPT_DIR="/opt/nightmare"
 
 # Ensure directory exists
 if [[ ! -d "$SCRIPT_DIR" ]]; then
