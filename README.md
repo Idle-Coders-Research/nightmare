@@ -1,9 +1,7 @@
 # 🕶️ NIGHTMARE 
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
-
 ![Platform](https://img.shields.io/badge/platform-Linux-lightgrey.svg)
 
 **Nightmare** is a stealth-focused command-line tool for privacy-conscious users, hackers, and cyber wanderers. Spoof your identity, vanish from the grid, lock down your network — and just maybe...
