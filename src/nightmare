@@ -1,0 +1,74 @@
+#!/bin/bash
+# nightmare - Command line wrapper for begghost, isghost, and behuman
+
+# Configurable script directory
+SCRIPT_DIR="$HOME/Ghost-Kit"
+
+# Ensure directory exists
+if [[ ! -d "$SCRIPT_DIR" ]]; then
+    echo "[✗] Nightmare package directory not found at $SCRIPT_DIR"
+    exit 1
+fi
+
+# Color helpers
+ghost_color="\e[35m"   # Purple/ghostly tint
+subtitle_color="\e[36m" # Cyan subtitle
+reset="\e[0m"
+copyright(){
+	echo -e "${ghost_color}********* "
+	echo " "
+	echo -e "${ghost_color} NIGHTMARE v-1.0.0  - Powerfull Anonymous Toolkit ${reset}"
+	echo -e "${ghost_color} Copyright 2025 @ Antman and his quantam-universe "
+	echo " "
+	echo -e "${ghost_color}********* ${reset} "
+	}
+print_banner() {
+    clear
+    # Banner text in ghostly purple
+    if command -v toilet &> /dev/null; then
+        echo -e "${ghost_color}"
+        toilet -t -f mono12 -F border -W "NIGHTMARE"
+    elif command -v figlet &> /dev/null; then
+        echo -e "${ghost_color}"
+        figlet -W "NIGHTMARE"
+    else
+        echo -e "${ghost_color}===== NIGHTMARE =====${reset}"
+    fi
+    # Subtitle in cyan
+    echo -e "${subtitle_color}Nightmare - Browse like the ghost of a Nightmare.${reset}\n"
+}
+
+show_help() {
+    sudo echo -e "${subtitle_color}Usage: nightmare [start|status|stop|help]${reset}\n"
+    echo "  start     - Become The Ghost of Nightmare. This mode will help you to sneak in more anonymously than ever"
+    echo "  status    - Check your status"
+    echo "  stop      - Become The Human Again. This mode will roll back your status which is unsecure, public and built-in"
+    echo "  help      - Show this help message"
+    echo " "
+    echo "Anonsurf Help Type: anonsurf help"
+    echo "Thanks for using NIGHTMARE... "
+    echo
+}
+
+case "$1" in
+    start)
+		copyright
+        echo "[+] Activating Ghost Mode: Become the Ghost of a Nightmare..."
+        sudo bash "$SCRIPT_DIR/beghost.sh"
+        ;;
+    status)
+		copyright
+        echo "[~] Status: checking your status."
+        sudo bash "$SCRIPT_DIR/isghost.sh"
+        ;;
+    stop)
+    	copyright
+        echo "[!] Reverting: Now you are Human."
+        sudo bash "$SCRIPT_DIR/behuman.sh"
+        ;;
+    help|*)
+		copyright
+        print_banner
+        show_help
+        ;;
+esac
