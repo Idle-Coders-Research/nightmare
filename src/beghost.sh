@@ -79,22 +79,39 @@ else
     echo "[✗] Failed To Disable IPv6. You better restart nightmare"
 fi
 
+echo " "
 
-# Ask before Anonsurf
-echo " "
-read -p "[?] Start Anonsurf? (y/n): " start_anon
-if [[ "$start_anon" =~ ^[Yy]$ ]]; then
-  anonsurf start
-fi
-echo " "
 # Ask before firewall lockdown
-read -p "[?] Apply strict firewall rules? (y/n): " apply_fw
+#!/bin/bash
+read -p "[?] Apply strict firewall rules? (Y/n): " apply_fw
+
 if [[ "$apply_fw" =~ ^[Yy]$ ]]; then
-  ufw default deny outgoing
-  ufw default deny incoming
-  ufw allow out to 127.0.0.1
-  ufw --force enable
+    echo "[+] Enabling strict iptables firewall rules..."
+    
+    # Optional path to your strict iptables script
+    /opt/nightmare/strictFirewall.sh
+
+else
+    echo "[+] Applying limited UFW lockdown instead..."
+
+    if command -v ufw >/dev/null 2>&1; then
+        sudo ufw --force reset
+        sudo ufw default deny outgoing
+        sudo ufw default deny incoming
+        sudo ufw allow out to 127.0.0.1
+        sudo ufw --force enable
+        echo "[+] UFW limited lockdown is now active."
+    else
+        echo "[-] UFW is not installed. Skipping UFW fallback."
+    fi
 fi
+echo " "
+
+
+# start Anonsurf
+echo " "
+
+anonsurf start
 
 echo " "
 echo " [✓] You are now in Ghost Mode. Sucessfully Became The Ghost Of A Nightmare "

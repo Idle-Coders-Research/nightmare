@@ -26,6 +26,12 @@ fi
 echo "[+] Detected Interface: $iface"
 echo "[+] Detected Connection: $conn_name"
 
+# Stop Anonsurf (optional)
+read -p "[?] Stop Anonsurf? (y/n): " stop_ans
+if [[ "$stop_ans" =~ ^[Yy]$ ]]; then
+    echo "y" | anonsurf stop >/dev/null 2>&1
+fi
+
 # MAC Restore
 echo "[+] Restoring MAC address..."
 
@@ -61,16 +67,14 @@ echo "[+] Enabling IPv6..."
 sysctl -w net.ipv6.conf.all.disable_ipv6=0
 sysctl -w net.ipv6.conf.default.disable_ipv6=0
 
-# Stop Anonsurf (optional)
-read -p "[?] Stop Anonsurf? (y/n): " stop_ans
-if [[ "$stop_ans" =~ ^[Yy]$ ]]; then
-    anonsurf stop
-fi
 
-# Disable firewall (optional)
-read -p "[?] Disable UFW firewall? (y/n): " disable_fw
-if [[ "$disable_fw" =~ ^[Yy]$ && $(command -v ufw) ]]; then
-    ufw disable
+# Force disable UFW without prompting
+if command -v ufw >/dev/null 2>&1; then
+    echo "[+] Disabling UFW (forced)"
+    sudo ufw disable
 fi
-
+# rollback strict rules
+echo " "
+/opt/nightmare/rollbackFirewall.sh
+echo " "
 echo "[✓] You are now back in HUMAN MODE."
