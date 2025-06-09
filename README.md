@@ -8,7 +8,6 @@
 
 > ## _Become the GHOST of a NIGHTMARE._
 
----
 
 ## 🎯 Features
 
