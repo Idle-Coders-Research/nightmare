@@ -40,7 +40,7 @@
 
 ### 💻 From `.deb` package:
 #### Download the latest `.deb` file from releases page:
-Click this link to download latest version [latest releases](https://github.com/antman-quantamuniverse/nightmare/releases) 
+[Click this link to download latest version latest releases](https://github.com/antman-quantamuniverse/nightmare/releases) 
 
 #### After downloading the `.deb` file run this command:
 
