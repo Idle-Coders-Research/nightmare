@@ -39,7 +39,10 @@
 ## 📦 Installation
 
 ### 💻 From `.deb` package:
-#### Download the latest `.deb` file from the [releases](https://github.com/YOUR_USERNAME/nightmare/releases) page and run:
+#### Download the latest `.deb` file from releases page:
+Click this link to download latest version [latest releases](https://github.com/antman-quantamuniverse/nightmare/releases) 
+
+#### After downloading the `.deb` file run this command:
 
 ```bash
 sudo dpkg -i nightmare_1.0.deb
