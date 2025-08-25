@@ -9,21 +9,21 @@
 > ## _Become the GHOST of a NIGHTMARE._
 
 
-## 🎯 Features
+## Features
 
-- 🔥 **Ghost Mode**
+- **Ghost Mode**
   - MAC address spoofing (via `macchanger`)
   - Dynamic IP reassignment
   - IPv6 disabling for privacy hardening
   - Optional routing through Anonsurf (Tor)
   - UFW firewall lockdown (localhost only)
 
-- 🧠 **Status Mode**
+-  **Status Mode**
   - Check MAC spoof status
   - Confirm firewall, Anonsurf, and IP state
   - Instant ghost/human mode audit
 
-- 🔁 **Human Mode**
+-  **Human Mode**
   - Revert spoofed MAC to original
   - Restore IPv6, disable firewall & Anonsurf
   - Reset to normal state
