@@ -117,7 +117,7 @@ Copyright (c) 2025 [Idle Coders Research](https://github.com/idlecoders-research
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software...
 
-[→ View full license](./license)
+[→ View full license](https://github.com/idlecoders-research/nightmare/blob/master/LICENSE)
 
 ---
 
