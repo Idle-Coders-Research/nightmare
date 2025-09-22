@@ -4,7 +4,7 @@ Version: 2.0.0
 Section: utils
 Priority: optional
 Architecture: all
-Maintainer: idle coders <https://github.com/idlecoders1>
+Maintainer: Shuvo Sarker <ssworkmail22@gmail.com>
 Depends: bash, coreutils, network-manager, macchanger, anonsurf, ufw, wget 
 Description: Nightmare - Powerfull Anonymous CLI Toolkit
  A command-line utility to spoof MAC, hide IP, route traffic via Tor,
