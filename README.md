@@ -8,7 +8,7 @@
 
 ## _Become the GHOST of a NIGHTMARE._
 
-> This tool specially built for ###Parrot OS 6.4
+> This tool specially built for ### Parrot OS 6.4
 
 ## Features
 
