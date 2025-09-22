@@ -113,7 +113,7 @@ This tool leverages the power of:
 ## 📜 License
 
 MIT License  
-Copyright (c) 2025 [@antman-quantamUniverse](https://github.com/antman-quantamUniverse)
+Copyright (c) 2025 [Idle Coders Research](https://github.com/idlecoders-research) and its parent organization [Idle Coders](https://github.com/idlecoders1) and the developer [Shuvo Sarker](https://github.com/strangerseemanta)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software...
 
