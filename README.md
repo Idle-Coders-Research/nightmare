@@ -6,8 +6,9 @@
 
 **Nightmare** is a stealth-focused command-line tool for privacy-conscious users, hackers, and cyber wanderers. Spoof your identity, vanish from the grid, lock down your network — and just maybe...
 
-> ## _Become the GHOST of a NIGHTMARE._
+## _Become the GHOST of a NIGHTMARE._
 
+> This tool specially built for ###Parrot OS 6.4
 
 ## Features
 
