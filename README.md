@@ -8,7 +8,7 @@
 
 ## _Become the GHOST of a NIGHTMARE._
 
-> This tool specially built for ### Parrot OS 6.4
+> This tool specially built for Parrot OS 6.4. It will not work fine on othe operating system. But if you can install all the dependencies then it will work !
 
 ## Features
 
